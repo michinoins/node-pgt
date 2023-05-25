@@ -1,10 +1,11 @@
 // src/services/UserService.ts
-import { UserRepository } from "../repositories/UserRepository";
-
 import { User } from "../types/User";
+import { UserRepository } from "../repositories/UserRepository";
+import { Service, Inject } from "typedi";
 
+@Service()
 export class UserService {
-  constructor(private userRepository: UserRepository) {}
+  constructor(@Inject() private userRepository: UserRepository) {}
 
   getAll(): Promise<User[]> {
     return this.userRepository.getAll();

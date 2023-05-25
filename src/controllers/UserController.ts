@@ -9,11 +9,13 @@ import {
   Body,
 } from "routing-controllers";
 import { UserService } from "../services/UserService";
+import { Inject, Service } from "typedi";
 
 // src/controllers/UserController.ts
 import { User } from "../types/User";
 
 @JsonController("/users")
+@Service()
 export class UserController {
   constructor(private userService: UserService) {}
 

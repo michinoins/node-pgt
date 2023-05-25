@@ -1,6 +1,7 @@
 // src/repositories/UserRepository.ts
+import { Service } from "typedi";
 import { User } from "../types/User";
-
+@Service()
 export class UserRepository {
   // 仮のデータベース代わりに配列を使います。
   private users: User[] = [
